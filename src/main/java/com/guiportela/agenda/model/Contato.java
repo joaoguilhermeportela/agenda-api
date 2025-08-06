@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 
 @Entity
@@ -16,12 +17,14 @@ public class Contato {
     @NotBlank(message = "Nome é obrigatório")
     private String nome;
 
+    @NotBlank(message = "Telefone é obrigatório")
     private String telefone;
 
+    @NotBlank(message = "Email é obrigatório")
+    @Email(message = "Formato de e-mail inválido")
     private String email;
 
     // Getters e Setters
-
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 

@@ -4,6 +4,7 @@ import com.guiportela.agenda.model.Contato;
 import com.guiportela.agenda.service.ContatoService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import jakarta.validation.Valid;
 
 import java.util.List;
 
@@ -34,7 +35,7 @@ public class ContatoController {
         return ResponseEntity.ok(contatos);
     }
     @PostMapping
-    public ResponseEntity<Contato> criarContato(@RequestBody Contato contato) {
+    public ResponseEntity<Contato> criarContato(@RequestBody @Valid Contato contato) {
         Contato novoContato = contatoService.salvar(contato);
         return ResponseEntity.ok(novoContato);
     }
