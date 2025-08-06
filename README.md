@@ -22,3 +22,8 @@ API REST simples para gerenciar contatos (CRUD) usando Java + Spring Boot + Post
 3. Execute o projeto com o comando:  
    ```bash
    mvn spring-boot:run
+
+## Melhorias recentes
+
+- Validação de campos obrigatórios com `@Valid`
+- Tratamento global de erros com `@ControllerAdvice`
